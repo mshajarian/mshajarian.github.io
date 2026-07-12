@@ -3,442 +3,428 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mohammad Shajarian — Unity developer portfolio and resume." />
-  <title>Mohammad Shajarian | Unity Developer Portfolio</title>
+  <meta name="description" content="Mohammad Shajarian — Unity developer portfolio." />
+  <title>Mohammad Shajarian | Unity Developer</title>
   <style>
-    :root {
-      --bg: #08111f;
-      --bg2: #0b1628;
-      --card: rgba(255,255,255,.05);
-      --card-strong: rgba(255,255,255,.08);
-      --line: rgba(255,255,255,.09);
-      --text: #eef4ff;
-      --muted: #aab8d3;
-      --accent: #59c7ff;
-      --accent2: #8b7dff;
-      --good: #77f1b1;
-      --shadow: 0 24px 60px rgba(0,0,0,.34);
-      --radius: 26px;
-      --radius-sm: 18px;
-      --max: 1180px;
+    :root{
+      --bg:#07101c;
+      --bg2:#0b1626;
+      --card:rgba(255,255,255,.05);
+      --card2:rgba(255,255,255,.08);
+      --line:rgba(255,255,255,.10);
+      --text:#eef4ff;
+      --muted:#a9b7d1;
+      --accent:#67d3ff;
+      --accent2:#8f7bff;
+      --good:#7ff0b6;
+      --shadow:0 22px 55px rgba(0,0,0,.30);
+      --radius:24px;
+      --radius-sm:16px;
+      --max:1180px;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      line-height: 1.6;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      line-height:1.6;
       background:
-        radial-gradient(circle at top left, rgba(89,199,255,.16), transparent 26%),
-        radial-gradient(circle at top right, rgba(139,125,255,.13), transparent 23%),
-        linear-gradient(180deg, var(--bg), #060d16 72%);
-    }
-    a { color: inherit; }
-    .wrap {
-      width: min(calc(100% - 32px), var(--max));
-      margin: 0 auto;
-    }
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 25;
-      backdrop-filter: blur(16px);
-      background: rgba(6,13,22,.75);
-      border-bottom: 1px solid var(--line);
-    }
-    .topbar-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      padding: 14px 0;
-    }
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .brand strong {
-      font-size: 1.02rem;
-      letter-spacing: .2px;
-    }
-    .brand span, .fine {
-      color: var(--muted);
-      font-size: .92rem;
-    }
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .nav a {
-      text-decoration: none;
-      padding: 8px 12px;
-      border-radius: 999px;
-      color: var(--muted);
-      border: 1px solid transparent;
-    }
-    .nav a:hover {
-      color: var(--text);
-      border-color: var(--line);
-      background: rgba(255,255,255,.05);
-    }
-    .hero {
-      padding: 42px 0 22px;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-    .panel, .hero-card, .section-card {
-      background: linear-gradient(180deg, var(--card), rgba(255,255,255,.03));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .hero-card {
-      padding: 32px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      right: -70px;
-      bottom: -70px;
-      width: 260px;
-      height: 260px;
-      background: radial-gradient(circle, rgba(89,199,255,.2), transparent 68%);
-      pointer-events: none;
-      filter: blur(4px);
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 13px;
-      border-radius: 999px;
-      background: rgba(89,199,255,.08);
-      border: 1px solid rgba(89,199,255,.18);
-      color: #e8fbff;
-      font-size: .9rem;
-      margin-bottom: 16px;
-    }
-    h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2.2rem, 5vw, 4.6rem);
-      line-height: 1.02;
-      letter-spacing: -.03em;
-      max-width: 14ch;
-    }
-    .subtitle {
-      margin: 0 0 20px;
-      max-width: 68ch;
-      color: var(--muted);
-      font-size: 1.06rem;
-    }
-    .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 20px 0 26px;
-    }
-    .pill {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid var(--line);
-      color: #f2f6ff;
-      font-size: .93rem;
-    }
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px 18px;
-      border-radius: 14px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: transform .18s ease, background .18s ease, border-color .18s ease;
-      white-space: nowrap;
-      border: 1px solid transparent;
-    }
-    .btn:hover { transform: translateY(-1px); }
-    .btn.primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #08111f;
-    }
-    .btn.secondary {
-      background: rgba(255,255,255,.05);
-      border-color: var(--line);
-    }
-    .hero-side {
-      display: grid;
-      gap: 16px;
-    }
-    .panel {
-      padding: 22px;
-    }
-    .panel h3 {
-      margin: 0 0 12px;
-      font-size: 1.06rem;
-    }
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 12px;
-    }
-    .stat {
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid var(--line);
-    }
-    .stat strong {
-      display: block;
-      font-size: 1.3rem;
-      margin-bottom: 4px;
-    }
-    .section {
-      padding: 18px 0 0;
-    }
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 16px;
-      margin-bottom: 14px;
-    }
-    .section-head h2 {
-      margin: 0;
-      font-size: 1.75rem;
-      letter-spacing: -.02em;
-    }
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 66ch;
-    }
-    .section-card {
-      padding: 24px;
-    }
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-    .about-box {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid var(--line);
-    }
-    .about-copy {
-      margin: 0;
-      color: #e8eefc;
-      font-size: 1.01rem;
-    }
-    .skill-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .skill {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid var(--line);
-      color: #eff4ff;
-      font-size: .92rem;
-    }
-    .timeline {
-      display: grid;
-      gap: 14px;
-    }
-    .job {
-      display: grid;
-      grid-template-columns: 250px 1fr;
-      gap: 18px;
-      padding: 18px;
-      border-radius: 20px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid var(--line);
-    }
-    .job h3 {
-      margin: 0 0 6px;
-      font-size: 1.08rem;
-    }
-    .job .meta {
-      color: var(--muted);
-      font-size: .92rem;
-    }
-    .job ul {
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: #dfe6fb;
-    }
-    .job li { margin: 4px 0; }
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 16px;
-    }
-    .project {
-      overflow: hidden;
-      background: rgba(255,255,255,.04);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-    }
-    .thumb {
-      aspect-ratio: 16 / 9;
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      background: #0d1422;
-      border-bottom: 1px solid var(--line);
-    }
-    .body {
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .body h3 {
-      margin: 0;
-      font-size: 1.06rem;
-    }
-    .body p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .chip {
-      display: inline-flex;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid var(--line);
-      color: #dfe7fb;
-      font-size: .82rem;
-    }
-    .link {
-      margin-top: auto;
-      color: var(--good);
-      text-decoration: none;
-      font-weight: 700;
-    }
-    .media-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 16px;
-    }
-    .video-card {
-      background: rgba(255,255,255,.04);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      overflow: hidden;
-    }
-    .video-title {
-      padding: 16px 18px 0;
-      font-size: 1.02rem;
-      font-weight: 700;
-    }
-    .video-sub {
-      padding: 6px 18px 14px;
-      margin: 0;
-      color: var(--muted);
-      font-size: .92rem;
-    }
-    .video-wrap {
-      position: relative;
-      aspect-ratio: 16 / 9;
-      background: #050a12;
-    }
-    .video-wrap iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    .video-note {
-      padding: 0 18px 18px;
-      color: var(--muted);
-      font-size: .9rem;
-    }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .contact-card {
-      padding: 18px;
-      border-radius: 20px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid var(--line);
-    }
-    .contact-card strong {
-      display: block;
-      margin-bottom: 6px;
-      color: #cae3ff;
-      font-size: .95rem;
-    }
-    .contact-card a, .contact-card span {
-      color: var(--text);
-      text-decoration: none;
-      word-break: break-word;
-    }
-    footer {
-      padding: 34px 0 46px;
-      color: var(--muted);
-      font-size: .92rem;
-    }
-    .footer-inner {
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    @media (max-width: 980px) {
-      .hero-grid, .grid-2, .project-grid, .media-grid, .contact-grid {
-        grid-template-columns: 1fr;
-      }
-      .job {
-        grid-template-columns: 1fr;
-      }
-      .topbar-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-    @media (max-width: 640px) {
-      .hero-card, .section-card, .panel {
-        padding: 20px;
-        border-radius: 20px;
-      }
-      h1 { font-size: 2.2rem; }
-      .nav { gap: 8px; }
-      .nav a { padding: 7px 10px; }
+        radial-gradient(circle at top left, rgba(103,211,255,.14), transparent 26%),
+        radial-gradient(circle at top right, rgba(143,123,255,.12), transparent 24%),
+        linear-gradient(180deg, var(--bg), #050a12 74%);
+    }
+    a{color:inherit}
+    .wrap{
+      width:min(calc(100% - 32px), var(--max));
+      margin:0 auto;
+    }
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:25;
+      backdrop-filter:blur(16px);
+      background:rgba(5,10,18,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+    .brand strong{
+      font-size:1.02rem;
+      letter-spacing:.2px;
+    }
+    .brand span,
+    .fine{
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    .nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .nav a{
+      text-decoration:none;
+      padding:7px 11px;
+      border-radius:999px;
+      color:var(--muted);
+      border:1px solid transparent;
+      transition:.18s ease;
+      font-size:.92rem;
+    }
+    .nav a:hover{
+      color:var(--text);
+      border-color:var(--line);
+      background:rgba(255,255,255,.05);
+    }
+    .hero{padding:36px 0 18px}
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .panel,
+    .hero-card,
+    .section-card{
+      background:linear-gradient(180deg, var(--card), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .hero-card{
+      padding:28px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      right:-60px;
+      bottom:-60px;
+      width:240px;
+      height:240px;
+      background:radial-gradient(circle, rgba(103,211,255,.18), transparent 68%);
+      pointer-events:none;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(103,211,255,.08);
+      border:1px solid rgba(103,211,255,.16);
+      color:#eafcff;
+      font-size:.86rem;
+      margin-bottom:14px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:clamp(2.0rem, 4.3vw, 4rem);
+      line-height:1.03;
+      letter-spacing:-.03em;
+      max-width:12ch;
+    }
+    .subtitle{
+      margin:0;
+      max-width:60ch;
+      color:var(--muted);
+      font-size:1.03rem;
+    }
+    .pills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+      margin:18px 0 22px;
+    }
+    .pill{
+      padding:9px 13px;
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      color:#f2f6ff;
+      font-size:.9rem;
+    }
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:12px;
+      font-weight:700;
+      text-decoration:none;
+      transition:transform .18s ease, background .18s ease, border-color .18s ease;
+      white-space:nowrap;
+      border:1px solid transparent;
+      font-size:.94rem;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#07101c;
+    }
+    .btn.secondary{
+      background:rgba(255,255,255,.04);
+      border-color:var(--line);
+    }
+    .hero-side{
+      display:grid;
+      gap:14px;
+    }
+    .panel{padding:20px}
+    .panel h3{
+      margin:0 0 12px;
+      font-size:1rem;
+    }
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:10px;
+    }
+    .stat{
+      padding:15px;
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+    }
+    .stat strong{
+      display:block;
+      font-size:1.15rem;
+      margin-bottom:4px;
+    }
+    .section{padding:18px 0 0}
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:16px;
+      margin-bottom:12px;
+    }
+    .section-head h2{
+      margin:0;
+      font-size:1.55rem;
+      letter-spacing:-.02em;
+    }
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      max-width:62ch;
+      font-size:.96rem;
+    }
+    .section-card{padding:22px}
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    .about-box{
+      padding:18px;
+      border-radius:18px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+    }
+    .about-copy{
+      margin:0;
+      color:#e8eefc;
+      font-size:1rem;
+    }
+    .skill-cloud{
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+    }
+    .skill{
+      padding:9px 13px;
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      border:1px solid var(--line);
+      color:#eff4ff;
+      font-size:.9rem;
+    }
+    .timeline{display:grid;gap:12px}
+    .job{
+      display:grid;
+      grid-template-columns:230px 1fr;
+      gap:16px;
+      padding:17px;
+      border-radius:18px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+    }
+    .job h3{
+      margin:0 0 5px;
+      font-size:1.03rem;
+    }
+    .job .meta{
+      color:var(--muted);
+      font-size:.9rem;
+    }
+    .job ul{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:#dfe6fb;
+    }
+    .job li{margin:4px 0}
+    .project-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:15px;
+    }
+    .project{
+      overflow:hidden;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      border-radius:20px;
+      display:flex;
+      flex-direction:column;
+    }
+    .thumb{
+      aspect-ratio:16/9;
+      width:100%;
+      display:block;
+      object-fit:cover;
+      background:#0d1422;
+      border-bottom:1px solid var(--line);
+    }
+    .body{
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:9px;
+    }
+    .body h3{
+      margin:0;
+      font-size:1.02rem;
+    }
+    .body p{
+      margin:0;
+      color:var(--muted);
+      font-size:.93rem;
+    }
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+    }
+    .chip{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      border:1px solid var(--line);
+      color:#dfe7fb;
+      font-size:.8rem;
+    }
+    .link{
+      margin-top:auto;
+      color:var(--good);
+      text-decoration:none;
+      font-weight:700;
+      font-size:.92rem;
+    }
+    .media-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:15px;
+    }
+    .video-card{
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      border-radius:20px;
+      overflow:hidden;
+    }
+    .video-title{
+      padding:15px 16px 0;
+      font-size:1rem;
+      font-weight:700;
+    }
+    .video-sub{
+      padding:6px 16px 12px;
+      margin:0;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+    .video-wrap{
+      position:relative;
+      aspect-ratio:16/9;
+      background:#050a12;
+    }
+    .video-wrap iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+    }
+    .video-note{
+      padding:0 16px 16px;
+      color:var(--muted);
+      font-size:.88rem;
+    }
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .contact-card{
+      padding:17px;
+      border-radius:18px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+    }
+    .contact-card strong{
+      display:block;
+      margin-bottom:6px;
+      color:#cae3ff;
+      font-size:.94rem;
+    }
+    .contact-card a,
+    .contact-card span{
+      color:var(--text);
+      text-decoration:none;
+      word-break:break-word;
+    }
+    footer{
+      padding:30px 0 44px;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    .footer-inner{
+      padding-top:16px;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    @media (max-width:980px){
+      .hero-grid,.grid-2,.project-grid,.media-grid,.contact-grid{grid-template-columns:1fr}
+      .job{grid-template-columns:1fr}
+      .topbar-inner{flex-direction:column;align-items:flex-start}
+    }
+    @media (max-width:640px){
+      .hero-card,.section-card,.panel{padding:18px;border-radius:18px}
+      h1{font-size:2.1rem}
+      .nav{gap:7px}
+      .nav a{padding:6px 9px}
     }
   </style>
 </head>
@@ -447,12 +433,12 @@
     <div class="wrap topbar-inner">
       <div class="brand">
         <strong>Mohammad Shajarian</strong>
-        <span>Unity Developer · Game Developer · Server-Side Developer</span>
+        <span>Unity Developer · Gameplay · Server-Side Systems</span>
       </div>
       <nav class="nav">
         <a href="#about">About</a>
-        <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#media">Media</a>
         <a href="#contact">Contact</a>
@@ -464,43 +450,35 @@
     <section class="hero">
       <div class="hero-grid">
         <div class="hero-card">
-          <div class="eyebrow">Portfolio · Resume · GitHub Pages Ready</div>
-          <h1>Unity developer focused on online games, gameplay systems, and shipped mobile products.</h1>
-          <p class="subtitle">
-            I build client gameplay, server logic, real-time features, and polished mobile releases. My background includes Unity, C#, .NET, Node.js, blockchain-linked games, and full-cycle delivery across mobile and web projects.
-          </p>
+          <div class="eyebrow">Unity Developer</div>
+          <h1>Unity Developer</h1>
+          <p class="subtitle">I build gameplay systems, multiplayer features, and client-server solutions for mobile and online games.</p>
           <div class="pills">
-            <span class="pill">8+ years in development</span>
-            <span class="pill">10+ shipped projects</span>
-            <span class="pill">2+ years backend work</span>
-            <span class="pill">Real-time socket systems</span>
-            <span class="pill">Solana integration experience</span>
+            <span class="pill">Unity & C#</span>
+            <span class="pill">Real-time systems</span>
+            <span class="pill">Mobile games</span>
+            <span class="pill">Backend integration</span>
           </div>
           <div class="cta-row">
             <a class="btn primary" href="mailto:mohammadshajarian1@gmail.com">Email Me</a>
             <a class="btn secondary" href="#projects">View Projects</a>
-            <a class="btn secondary" href="#media">Watch Media</a>
+            <a class="btn secondary" href="#experience">Experience</a>
           </div>
         </div>
+
         <aside class="hero-side">
           <div class="panel">
-            <h3>At a glance</h3>
+            <h3>Highlights</h3>
             <div class="stats">
-              <div class="stat"><strong>Unity</strong><span>Client gameplay systems</span></div>
-              <div class="stat"><strong>.NET</strong><span>Backend & APIs</span></div>
-              <div class="stat"><strong>Node.js</strong><span>Online services</span></div>
-              <div class="stat"><strong>Solana</strong><span>Blockchain-linked games</span></div>
+              <div class="stat"><strong>8+ years</strong><span class="fine">Software development</span></div>
+              <div class="stat"><strong>10+ titles</strong><span class="fine">Shipped projects</span></div>
+              <div class="stat"><strong>.NET / Node</strong><span class="fine">Server-side work</span></div>
+              <div class="stat"><strong>Solana</strong><span class="fine">Blockchain features</span></div>
             </div>
           </div>
           <div class="panel">
             <h3>Profile</h3>
-            <p class="fine">
-              Location: Tehran, Iran<br />
-              English: Professional<br />
-              Military status: Exempt<br />
-              Marital status: Single<br />
-              Birth year: 1996
-            </p>
+            <p class="fine">Tehran, Iran<br /> English: Professional<br /> Software Engineering — Razi University</p>
           </div>
         </aside>
       </div>
@@ -508,18 +486,18 @@
 
     <section id="about" class="section">
       <div class="section-head">
-        <h2>About Me</h2>
-        <p>Rewritten to read clearly for recruiters and hiring managers.</p>
+        <h2>About</h2>
+        <p>Unity developer with experience in gameplay, multiplayer, and backend systems.</p>
       </div>
       <div class="section-card grid-2">
         <div class="about-box">
           <p class="about-copy">
-            I have around 8 years of experience in software development with a focus on Unity and C#. I have worked on more than 10 mobile and web projects, covering client-side gameplay, server-side systems, APIs, online gameplay, and real-time socket-based features.
+            I am a Unity developer with experience in client gameplay, multiplayer features, and server-side logic. I focus on shipping practical features, keeping systems stable, and making games feel polished.
           </p>
         </div>
         <div class="about-box">
           <p class="about-copy">
-            I also have experience with Solana integrations and client-server architecture for online games. My work style is hands-on and production-focused: I build features, polish gameplay, solve technical issues, and help ship complete products.
+            My background includes mobile games, online systems, real-time sockets, and full-cycle development from prototype to release. I enjoy solving gameplay and technical problems together, not separately.
           </p>
         </div>
       </div>
@@ -527,8 +505,8 @@
 
     <section id="skills" class="section">
       <div class="section-head">
-        <h2>Core Skills</h2>
-        <p>Cleaner presentation than a plain list.</p>
+        <h2>Skills</h2>
+        <p>Tools and systems used in production.</p>
       </div>
       <div class="section-card">
         <div class="skill-cloud">
@@ -536,24 +514,24 @@
           <span class="skill">C#</span>
           <span class="skill">.NET</span>
           <span class="skill">Node.js</span>
+          <span class="skill">Gameplay Systems</span>
           <span class="skill">Client-Server Architecture</span>
           <span class="skill">Real-Time Sockets</span>
           <span class="skill">Mobile Game Development</span>
-          <span class="skill">Gameplay Systems</span>
-          <span class="skill">Project Planning</span>
+          <span class="skill">Multiplayer</span>
+          <span class="skill">Optimization</span>
+          <span class="skill">UI Integration</span>
           <span class="skill">Game Design</span>
           <span class="skill">Photoshop</span>
-          <span class="skill">Blockchain / Solana</span>
-          <span class="skill">Optimization</span>
-          <span class="skill">UI / UX Integration</span>
+          <span class="skill">Solana</span>
         </div>
       </div>
     </section>
 
     <section id="experience" class="section">
       <div class="section-head">
-        <h2>Work Experience</h2>
-        <p>Translated from your updated resume and presented as a polished developer profile.</p>
+        <h2>Experience</h2>
+        <p>Selected roles and shipped work.</p>
       </div>
       <div class="section-card timeline">
         <article class="job">
@@ -562,79 +540,55 @@
             <div class="meta">Apr 2025 – Dec 2025 · Remote</div>
           </div>
           <div>
-            <p class="fine">Remote development for a train-themed game project.</p>
+            <p class="fine">Train-themed game project.</p>
             <ul>
-              <li>Implemented core rail systems, train movement logic, and gameplay flow.</li>
-              <li>Worked on client-side features, UI integration, and overall gameplay polish.</li>
-              <li>Supported production tasks to keep the game stable and release-ready.</li>
+              <li>Implemented train movement logic and rail systems.</li>
+              <li>Built gameplay features and supported UI integration.</li>
+              <li>Helped polish the project for release.</li>
             </ul>
           </div>
         </article>
+
         <article class="job">
           <div>
-            <h3>Unity & Server Developer · Coree Games (Hamrah Aval)</h3>
+            <h3>Unity & Server Developer · Coree Games</h3>
             <div class="meta">Apr 2024 – Sep 2025</div>
           </div>
           <div>
-            <p class="fine">Online real-time game development for Thousand Thieves.</p>
+            <p class="fine">Online real-time game development.</p>
             <ul>
-              <li>Built gameplay systems on both client and server.</li>
-              <li>Implemented online and real-time mechanics for a competitive mobile game.</li>
-              <li>Helped deliver production features across gameplay, networking, and backend logic.</li>
+              <li>Built client and server gameplay systems.</li>
+              <li>Worked on multiplayer logic and real-time features.</li>
+              <li>Supported production delivery for a competitive mobile title.</li>
             </ul>
           </div>
         </article>
+
         <article class="job">
           <div>
             <h3>Unity & Server Developer · Honyland</h3>
             <div class="meta">Apr 2022 – Sep 2023</div>
           </div>
           <div>
-            <p class="fine">Unity and backend development for a Solana-based game.</p>
+            <p class="fine">Solana-based game project.</p>
             <ul>
-              <li>Worked on the game client and server infrastructure.</li>
-              <li>Integrated blockchain-related features and game logic with Solana.</li>
-              <li>Helped design and implement a client-server architecture for an online game.</li>
+              <li>Developed the game client and backend systems.</li>
+              <li>Integrated blockchain-related game features.</li>
+              <li>Helped shape the client-server architecture.</li>
             </ul>
           </div>
         </article>
+
         <article class="job">
           <div>
             <h3>Unity Developer · Tadbir Gostaran</h3>
             <div class="meta">Sep 2019 – Mar 2021</div>
           </div>
           <div>
-            <p class="fine">Online backgammon and word games.</p>
+            <p class="fine">Online board and word games.</p>
             <ul>
-              <li>Developed client-side game features and online gameplay components.</li>
-              <li>Worked on interactive systems for board and word game experiences.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="job">
-          <div>
-            <h3>Unity Developer · Medrick</h3>
-            <div class="meta">Aug 2019 – Dec 2019</div>
-          </div>
-          <div>
-            <p class="fine">Game production work on Golmorad and Babashah.</p>
-            <ul>
-              <li>Supported gameplay implementation and game content delivery.</li>
-              <li>Contributed to the development of mobile game features and UI flow.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="job">
-          <div>
-            <h3>Independent Game Developer · Personal Projects</h3>
-            <div class="meta">2018 – 2026</div>
-          </div>
-          <div>
-            <p class="fine">Shipped multiple solo projects from concept to release.</p>
-            <ul>
-              <li>Built and published different games independently from start to finish.</li>
-              <li>Created Electrical Technician, which reached 100,000 installs.</li>
-              <li>Handled gameplay, implementation, and release execution across multiple titles.</li>
+              <li>Created client-side features and gameplay flow.</li>
+              <li>Worked on online interactions and game logic.</li>
             </ul>
           </div>
         </article>
@@ -643,120 +597,116 @@
 
     <section id="projects" class="section">
       <div class="section-head">
-        <h2>Featured Projects</h2>
-        <p>Every card now has a visual reference and a working public media link.</p>
+        <h2>Selected Projects</h2>
+        <p>Selected projects from shipped work.</p>
       </div>
       <div class="section-card">
         <div class="project-grid">
-          
           <article class="project">
-            <img class="thumb" src="https://img.youtube.com/vi/htVVdXki7YQ/hqdefault.jpg" alt="MetaRail / Train Town preview" loading="lazy" />
+            <img class="thumb" src="https://img.youtube.com/vi/htVVdXki7YQ/hqdefault.jpg" alt="MetaRail preview" loading="lazy" />
             <div class="body">
               <h3>MetaRail / Train Town</h3>
-              <p><strong>Unity Developer · rail systems and gameplay flow</strong><br>Built train movement logic, rail-system gameplay, UI integration, and production polish for a train-themed mobile project.</p>
+              <p>Unity developer work on rail movement, gameplay flow, UI integration, and release polish.</p>
               <div class="chips">
-                <span class="chip">Rail movement logic</span><span class="chip">Client-side gameplay</span><span class="chip">Release polish</span>
+                <span class="chip">Rail logic</span><span class="chip">Gameplay</span><span class="chip">Mobile</span>
               </div>
-              <a class="link" href="https://www.youtube.com/watch?v=htVVdXki7YQ" target="_blank" rel="noopener noreferrer">Open YouTube gameplay</a>
+              <a class="link" href="https://www.youtube.com/watch?v=htVVdXki7YQ" target="_blank" rel="noopener noreferrer">Open video</a>
             </div>
           </article>
+
           <article class="project">
-            <img class="thumb" src="https://s.cafebazaar.ir/images/upload/screenshot/com.CoreeGame.ThousandThieves-312650116866.jpg?x-img=v1%2Fresize%2Ch_600%2Clossless_false%2Foptimize" alt="Thousand Thieves (Taraj) preview" loading="lazy" />
+            <img class="thumb" src="https://s.cafebazaar.ir/images/upload/screenshot/com.CoreeGame.ThousandThieves-312650116866.jpg?x-img=v1%2Fresize%2Ch_600%2Clossless_false%2Foptimize" alt="Thousand Thieves preview" loading="lazy" />
             <div class="body">
-              <h3>Thousand Thieves (Taraj)</h3>
-              <p><strong>Unity & Server Developer · online strategy</strong><br>Worked on the client and server side of the online competitive strategy game, including gameplay logic, tactics, and real-time systems.</p>
+              <h3>Thousand Thieves</h3>
+              <p>Online competitive strategy project with client-server gameplay and real-time systems.</p>
               <div class="chips">
-                <span class="chip">PvP strategy</span><span class="chip">Client-server work</span><span class="chip">Real-time systems</span>
+                <span class="chip">PvP</span><span class="chip">Networking</span><span class="chip">Backend</span>
               </div>
-              <a class="link" href="https://www.youtube.com/watch?v=rpjUrRYkaZQ" target="_blank" rel="noopener noreferrer">Open YouTube match</a>
+              <a class="link" href="https://www.youtube.com/watch?v=rpjUrRYkaZQ" target="_blank" rel="noopener noreferrer">Open video</a>
             </div>
           </article>
+
           <article class="project">
             <img class="thumb" src="https://img.youtube.com/vi/j4_HbzEg-z4/hqdefault.jpg" alt="Honey Land preview" loading="lazy" />
             <div class="body">
               <h3>Honey Land</h3>
-              <p><strong>Unity & Server Developer · Solana game</strong><br>Developed gameplay and backend features for a blockchain-linked game, including Solana-related integration and online infrastructure.</p>
+              <p>Solana-linked game with gameplay and backend development.</p>
               <div class="chips">
-                <span class="chip">Solana integration</span><span class="chip">Backend features</span><span class="chip">Online game infra</span>
+                <span class="chip">Solana</span><span class="chip">Online</span><span class="chip">Backend</span>
               </div>
-              <a class="link" href="https://www.youtube.com/watch?v=j4_HbzEg-z4" target="_blank" rel="noopener noreferrer">Open YouTube reference</a>
+              <a class="link" href="https://www.youtube.com/watch?v=j4_HbzEg-z4" target="_blank" rel="noopener noreferrer">Open video</a>
             </div>
           </article>
+
           <article class="project">
-            <img class="thumb" src="https://img.youtube.com/vi/6P5N-4g7lxo/hqdefault.jpg" alt="Backgammon Wini Games preview" loading="lazy" />
+            <img class="thumb" src="https://img.youtube.com/vi/6P5N-4g7lxo/hqdefault.jpg" alt="Backgammon preview" loading="lazy" />
             <div class="body">
               <h3>Backgammon Wini Games</h3>
-              <p><strong>Unity Developer · board game systems</strong><br>Built a modern multiplayer backgammon experience with online play and user-friendly interactions.</p>
+              <p>Multiplayer backgammon project with online play and a cleaner game flow.</p>
               <div class="chips">
-                <span class="chip">Multiplayer play</span><span class="chip">Board game UX</span><span class="chip">Online chat</span>
+                <span class="chip">Multiplayer</span><span class="chip">Board game</span><span class="chip">Online</span>
               </div>
-              <a class="link" href="https://www.youtube.com/watch?v=6P5N-4g7lxo" target="_blank" rel="noopener noreferrer">Open YouTube gameplay</a>
+              <a class="link" href="https://www.youtube.com/watch?v=6P5N-4g7lxo" target="_blank" rel="noopener noreferrer">Open video</a>
             </div>
           </article>
+
           <article class="project">
-            <img class="thumb" src="https://s.cafebazaar.ir/images/upload/screenshot/com.PilehGames.Lotus-493553832805.jpg?x-img=v1%2Fresize%2Ch_600%2Clossless_false%2Foptimize" alt="Lotus / Pooke preview" loading="lazy" />
+            <img class="thumb" src="https://s.cafebazaar.ir/images/upload/screenshot/com.PilehGames.Lotus-493553832805.jpg?x-img=v1%2Fresize%2Ch_600%2Clossless_false%2Foptimize" alt="Lotus preview" loading="lazy" />
             <div class="body">
               <h3>Lotus / Pooke</h3>
-              <p><strong>Unity Developer · online team shooter</strong><br>Worked on an online team-based action game with competitive modes, characters, and live battle systems.</p>
+              <p>Online team-based action game with competitive modes and battle systems.</p>
               <div class="chips">
-                <span class="chip">Real-time battles</span><span class="chip">Character systems</span><span class="chip">Competitive modes</span>
+                <span class="chip">Real-time</span><span class="chip">Action</span><span class="chip">Competitive</span>
               </div>
-              <a class="link" href="https://www.youtube.com/watch?v=gPLxVZfqTiw" target="_blank" rel="noopener noreferrer">Open YouTube short</a>
+              <a class="link" href="https://www.youtube.com/watch?v=gPLxVZfqTiw" target="_blank" rel="noopener noreferrer">Open video</a>
             </div>
           </article>
+
           <article class="project">
-            <img class="thumb" src="https://s.cafebazaar.ir/images/upload/screenshot/com.Mirage.AchirdWorld-675652006774.jpg?x-img=v1%2Fresize%2Ch_600%2Clossless_false%2Foptimize" alt="Achird World / Dunyā-ye Achird preview" loading="lazy" />
+            <img class="thumb" src="https://s.cafebazaar.ir/images/upload/screenshot/com.Mirage.AchirdWorld-675652006774.jpg?x-img=v1%2Fresize%2Ch_600%2Clossless_false%2Foptimize" alt="Achird World preview" loading="lazy" />
             <div class="body">
-              <h3>Achird World / Dunyā-ye Achird</h3>
-              <p><strong>Puzzle game · vehicle-building logic</strong><br>A puzzle game focused on building the right vehicle for each road, combining creativity, guidance systems, and level progression.</p>
+              <h3>Achird World</h3>
+              <p>Puzzle game with road-based vehicle building and guided progression.</p>
               <div class="chips">
-                <span class="chip">Vehicle building</span><span class="chip">Puzzle progression</span><span class="chip">Gameplay guidance</span>
+                <span class="chip">Puzzle</span><span class="chip">Level design</span><span class="chip">Systems</span>
               </div>
-              <a class="link" href="https://www.aparat.com/v/r3214u4" target="_blank" rel="noopener noreferrer">Open Other public source</a>
+              <a class="link" href="https://www.aparat.com/v/r3214u4" target="_blank" rel="noopener noreferrer">Open source</a>
             </div>
           </article>
+
           <article class="project">
-            <img class="thumb" src="https://s.cafebazaar.ir/images/icons/info.medrick.golshifteh-beee840e-d7ed-45cf-8708-f58ead961b95_512x512.png?x-img=v1%2Fresize%2Ch_256%2Cw_256%2Clossless_false%2Foptimize" alt="Golshifteh: Match3 Puzzle Game preview" loading="lazy" />
+            <img class="thumb" src="https://s.cafebazaar.ir/images/icons/info.medrick.golshifteh-beee840e-d7ed-45cf-8708-f58ead961b95_512x512.png?x-img=v1%2Fresize%2Ch_256%2Cw_256%2Clossless_false%2Foptimize" alt="Golshifteh preview" loading="lazy" />
             <div class="body">
-              <h3>Golshifteh: Match3 Puzzle Game</h3>
-              <p><strong>Game developer · casual puzzle</strong><br>A polished match-3 puzzle title with strong installs and production support across content, progression, and live tuning.</p>
+              <h3>Golshifteh</h3>
+              <p>Match-3 puzzle title with content, progression, and tuning support.</p>
               <div class="chips">
-                <span class="chip">Match-3 design</span><span class="chip">Casual progression</span><span class="chip">Large player base</span>
+                <span class="chip">Match-3</span><span class="chip">Casual</span><span class="chip">Live tuning</span>
               </div>
-              <a class="link" href="https://www.youtube.com/watch?v=3VsWIT58tRw" target="_blank" rel="noopener noreferrer">Open YouTube mention</a>
+              <a class="link" href="https://www.youtube.com/watch?v=3VsWIT58tRw" target="_blank" rel="noopener noreferrer">Open video</a>
             </div>
           </article>
+
           <article class="project">
-            <img class="thumb" src="https://s.cafebazaar.ir/images/upload/screenshot/com.ghostphoenix.abadi-099891532191.jpg?x-img=v1%2Fresize%2Ch_600%2Clossless_false%2Foptimize" alt="Abadi / Dehkadeh preview" loading="lazy" />
+            <img class="thumb" src="https://s.cafebazaar.ir/images/upload/screenshot/com.ghostphoenix.abadi-099891532191.jpg?x-img=v1%2Fresize%2Ch_600%2Clossless_false%2Foptimize" alt="Abadi preview" loading="lazy" />
             <div class="body">
               <h3>Abadi / Dehkadeh</h3>
-              <p><strong>Unity Developer · word and logic game</strong><br>Built a word-based puzzle game about helping a traveler restore a village, with level design and progression systems.</p>
+              <p>Word and logic game about restoring a village through level progression.</p>
               <div class="chips">
-                <span class="chip">Word-game logic</span><span class="chip">Level progression</span><span class="chip">Village restoration</span>
+                <span class="chip">Word game</span><span class="chip">Progression</span><span class="chip">Mobile</span>
               </div>
-              <a class="link" href="https://www.youtube.com/watch?v=f4IBDsnDe7U" target="_blank" rel="noopener noreferrer">Open YouTube upload</a>
+              <a class="link" href="https://www.youtube.com/watch?v=f4IBDsnDe7U" target="_blank" rel="noopener noreferrer">Open video</a>
             </div>
           </article>
-          <article class="project">
-            <img class="thumb" src="https://s.cafebazaar.ir/images/upload/screenshot/com.ShajarianGames.Professor2.jpg?x-img=v1%2Fresize%2Ch_600%2Clossless_false%2Foptimize" alt="Professor preview" loading="lazy" />
-            <div class="body">
-              <h3>Professor</h3>
-              <p><strong>Unity Developer · puzzle / platform game</strong><br>Designed a puzzle journey where the professor reaches the laboratory through tricky stages and progressive challenges.</p>
-              <div class="chips">
-                <span class="chip">Puzzle stages</span><span class="chip">Level guidance</span><span class="chip">Platform flow</span>
-              </div>
-              <a class="link" href="https://cafebazaar.ir/app/com.ShajarianGames.Professor?l=en" target="_blank" rel="noopener noreferrer">Open Bazaar page</a>
-            </div>
-          </article>
+
           <article class="project">
             <img class="thumb" src="https://img.youtube.com/vi/SkM-aCB7Wgk/hqdefault.jpg" alt="Electrical Technician preview" loading="lazy" />
             <div class="body">
               <h3>Electrical Technician</h3>
-              <p><strong>Solo developer · wiring simulator</strong><br>A solo project focused on electrical tasks, wiring simulation, and practical mechanic-driven gameplay.</p>
+              <p>Solo wiring simulator project with practical mechanic-driven gameplay.</p>
               <div class="chips">
-                <span class="chip">Wiring simulation</span><span class="chip">Solo release</span><span class="chip">100k installs</span>
+                <span class="chip">Solo</span><span class="chip">Simulation</span><span class="chip">100k installs</span>
               </div>
-              <a class="link" href="https://www.youtube.com/watch?v=SkM-aCB7Wgk" target="_blank" rel="noopener noreferrer">Open YouTube video</a>
+              <a class="link" href="https://www.youtube.com/watch?v=SkM-aCB7Wgk" target="_blank" rel="noopener noreferrer">Open video</a>
             </div>
           </article>
         </div>
@@ -765,22 +715,22 @@
 
     <section id="media" class="section">
       <div class="section-head">
-        <h2>Featured Media</h2>
-        <p>These are the strongest public reference clips for the portfolio.</p>
+        <h2>Videos</h2>
+        <p>Gameplay videos from selected projects.</p>
       </div>
       <div class="section-card">
         <div class="media-grid">
           <div class="video-card">
-            <div class="video-title">MetaRail / Train Town · Gameplay Reference</div>
-            <p class="video-sub">Public YouTube gameplay reference for the train-town project.</p>
+            <div class="video-title">MetaRail / Train Town</div>
+            <p class="video-sub">Gameplay reference clip.</p>
             <div class="video-wrap">
               <iframe src="https://www.youtube.com/embed/htVVdXki7YQ" title="MetaRail video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="video-note">Source: YouTube.</div>
           </div>
           <div class="video-card">
-            <div class="video-title">Electrical Technician · House Wiring Simulation</div>
-            <p class="video-sub">Public YouTube video for the electrical simulator project.</p>
+            <div class="video-title">Electrical Technician</div>
+            <p class="video-sub">House wiring simulation clip.</p>
             <div class="video-wrap">
               <iframe src="https://www.youtube.com/embed/SkM-aCB7Wgk" title="Electrical Technician video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
@@ -792,8 +742,8 @@
 
     <section class="section">
       <div class="section-head">
-        <h2>Education & Languages</h2>
-        <p>A clean, recruiter-friendly summary of your background.</p>
+        <h2>Education</h2>
+        <p>Education and language background.</p>
       </div>
       <div class="section-card grid-2">
         <div class="about-box">
@@ -808,8 +758,8 @@
           <p class="about-copy">
             <strong>Languages</strong><br />
             English — Professional<br /><br />
-            <strong>Updated</strong><br />
-            Resume code: FH-5133946
+            <strong>Location</strong><br />
+            Tehran, Iran
           </p>
         </div>
       </div>
@@ -818,7 +768,7 @@
     <section id="contact" class="section">
       <div class="section-head">
         <h2>Contact</h2>
-        <p>Keep this section short and visible so employers can reach you quickly.</p>
+        <p>Quick contact details.</p>
       </div>
       <div class="section-card contact-grid">
         <div class="contact-card">
@@ -830,12 +780,12 @@
           <span>+98 923 399 8753</span>
         </div>
         <div class="contact-card">
-          <strong>Location</strong>
-          <span>Tehran, Iran</span>
+          <strong>Focus</strong>
+          <span>Unity, gameplay, multiplayer, and backend roles</span>
         </div>
         <div class="contact-card">
-          <strong>Portfolio Goal</strong>
-          <span>Unity / gameplay / online systems roles</span>
+          <strong>Location</strong>
+          <span>Tehran, Iran</span>
         </div>
       </div>
     </section>
@@ -843,7 +793,7 @@
     <footer>
       <div class="footer-inner">
         <span>Mohammad Shajarian · Unity Developer Portfolio</span>
-        <span>Built for GitHub Pages</span>
+        <span>Portfolio</span>
       </div>
     </footer>
   </main>
